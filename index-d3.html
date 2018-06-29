@@ -1,0 +1,60 @@
+<!DOCTYPE  html>
+<meta charset='utf-8'>
+<html lang="en">
+  <head>
+    <title>Spencer Simple Visualisation Tool</title>
+    
+    <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script type = "text/javascript" src = "https://d3js.org/d3-fetch.v1.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/NickQiZhu/dc.js/master/web/js/crossfilter.js"></script>
+    <script type = "text/javascript" src = "https://dc-js.github.io/dc.js/js/dc.js"></script>
+    
+    
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id = "root">
+    <div id = "header">
+        <div id = "filter">Hola!</div>
+        <div id = "notes"></div>
+    </div>
+    
+    <div id = "map"></div>
+    <div id = "graphs">
+        <div id = "pyramid"></div>
+        <div id = "projection"></div>
+        <div></div>
+    </div>
+    
+    <div id="year"></div>
+    </div>
+    <script>
+        
+    let filterByEth = "";
+    let population;
+    debugger;
+    //Reading csv file - population2021-by-Eth and range-age
+    d3.csv('/data/population2021_rangeAges.csv',function (data) {
+				// CSV section
+				  var body = d3.select("#filter");
+				  var selectData = [ { "text" : "Ethnicity" },
+				                     { "text" : "Age_Range" },
+				                     { "text" : "F" },
+				                     { "text" : "M" },
+				                   ]
+				                   
+              d3.select("#filter").text("WOW!").style("color","blue");
+              
+              d3.select("#notes").data(data)
+									  .enter()
+									 .append('p')
+									 .text(data.Ethnicity);
+			      
+			     
+     });      
+    
+  </script>
+  </body>
+</html>

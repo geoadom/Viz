@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v4.min.js" ></script>
+    <script src="http://d3js.org/d3-geo.v1.min.js" ></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='media_style.css'>
+    <link rel='stylesheet' href='pyramid.css'>
+  </head>
+  <body>
+    
+    <div id='filter'></div>
+    <div id="graph-container"></div>
+    <div id="slider-year">
+       <label for="year">Years</label> 
+       <p>
+       
+	    <span id="star_year">2012</span> 
+	    <input type="range" min="2012" max="2017" step="1" id="year" name="year" value="2012"/> 
+	    <span id="end_year">2021</span>
+	    </p>
+	    <span id="slider_value">2012</span> 
+	    
+	    <!--
+	    <label for="year">Years</label> 
+       <p>
+       
+	    <span id="star_year">2012</span> 
+	    <input type="range" min="2012" max="2017" step="1" id="year" name="year" value="2012" onchange="show_value(this.value);"/> 
+	    <span id="end_year">2021</span>
+	    </p>
+	    <span id="slider_value">2012</span> 
+	    <p>
+       
+	    <input type="range" id="year2" name="year2" list="tickmarks" /> 
+	    <datalist id="tickmarks">
+		    <option value="2012" label="2012">
+		    <option value="2013" >
+		    <option value="2014" >
+		    <option value="2015" >
+		    <option value="2016" >
+		    <option value="2017" >
+		    <option value="2018" >
+		    <option value="2019" >
+		    <option value="2020" >
+		    <option value="2021" label="2021">
+	    </datalist>
+	    
+	    </p>
+	    -->
+	    
+    </div>
+    <script type="text/javascript">
+        function show_value(v) {
+            document.getElementById("slider_value").innerHTML = v;
+        }
+        
+        
+    </script>
+    <script type='text/javascript' src='d3pyramid_slider.js'></script>
+    
+  </body>
+</html>
